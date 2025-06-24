@@ -1,17 +1,25 @@
-# Calculadora RPN (Notação Polonesa Reversa)
+# Calculadora RPN
 
-Este projeto implementa uma calculadora que avalia expressões matemáticas na notação RPN (Reverse Polish Notation), usando TAD Pilha em linguagem C.
+## O que é RPN?
+Notação Polonesa Reversa - é quando em um "cálculo" o operador vem depois dos números.
+- Exemplo: `3 4 +` = 7 (em vez de `3 + 4`)
 
-## Como funciona
+## Como Usar
+1. Rode o programa
+2. Digite as expressões RPN separadas por espaço
+3. Pressione Enter
+4. Digite "sair" para parar
 
-Na notação RPN:
-- Os operandos vêm antes dos operadores
-- A avaliação é feita usando uma pilha
-- Exemplo: `(3 + 4) * 5` → `3 4 + 5 *`
+## Exemplos
+```
+3 4 +           → 7
+5 1 2 + 4 * + 3 -   → 14  
+10 2 /          → 5
+```
 
-## Como executar
-
-1. Compile os arquivos:
-
-```bash
-gcc main.c pilha.c -o calculadora
+## Como Funciona
+1. **Pilha**: Usa uma pilha para guardar números
+2. **Algoritmo**: 
+   - Se é número: empilha
+   - Se é operador (+, -, *, /): desempilha 2 números, calcula, empilha resultado
+3. **Resultado**: O que sobra na pilha
